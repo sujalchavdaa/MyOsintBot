@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Получаем секретные данные из переменных окружения
-TOKEN="8231000386:AAEjWgefknI-poiW_NNuNfYe_t06zS4avpM"
+TOKEN="8471570824:AAH6ufXW3KZE4SZjInDMD2mY5FEGzX28AV8"
 DB_CONFIG = {
     'host': os.getenv('DB_HOST', '127.0.0.1'),
     'user': os.getenv('DB_USER', 'root'),
