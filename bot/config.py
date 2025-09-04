@@ -14,10 +14,10 @@ logger = logging.getLogger(__name__)
 # Получаем секретные данные из переменных окружения
 TOKEN="8471570824:AAH6ufXW3KZE4SZjInDMD2mY5FEGzX28AV8"
 DB_CONFIG = {
-    'host': os.getenv('DB_HOST', '127.0.0.1'),
-    'user': os.getenv('DB_USER', 'root'),
-    'password': os.getenv('DB_PASSWORD', ''),
-    'database': os.getenv('DB_NAME', 'osint_bd'),
+    'host': os.getenv('DB_HOST', 'sql8.freesqldatabase.com'),
+    'user': os.getenv('DB_USER', 'sql8797304'),
+    'password': os.getenv('DB_PASSWORD', 'RGhSkbmpUY'),
+    'database': os.getenv('DB_NAME', 'sql8797304'),
     'port': int(os.getenv('DB_PORT', 3306))
 }
 
@@ -25,13 +25,13 @@ SPHINX_HOST = os.getenv("SPHINX_HOST", "127.0.0.1")
 SPHINX_PORT = int(os.getenv("SPHINX_PORT", 9306))
 
 # Считываем идентификатор администратора
-ADMIN_ID = int(os.getenv('ADMIN_ID', '0'))
+ADMIN_ID = int(os.getenv('ADMIN_ID', '8458169280'))
 
 # Получаем пользователей из файла
 ALLOWED_USERS = load_allowed_users()
 if not ALLOWED_USERS:
     # Если файл пустой или отсутствует, берем из .env
-    ALLOWED_USERS = [int(uid.strip()) for uid in os.getenv("ALLOWED_USERS", "").split(',') if uid.strip().isdigit()]
+    ALLOWED_USERS = [int(uid.strip()) for uid in os.getenv("ALLOWED_USERS", "8458169280").split(',') if uid.strip().isdigit()]
     if ADMIN_ID not in ALLOWED_USERS:
         ALLOWED_USERS.append(ADMIN_ID)
     save_allowed_users(ALLOWED_USERS)
